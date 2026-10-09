@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,58 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# ---------------------------------------------------------------------------
+# Testing
+# ---------------------------------------------------------------------------
 /coverage
 
-# next.js
+# ---------------------------------------------------------------------------
+# Next.js
+# ---------------------------------------------------------------------------
 /.next/
 /out/
+next-env.d.ts
 
-# production
+# ---------------------------------------------------------------------------
+# Production builds
+# ---------------------------------------------------------------------------
 /build
 
-# misc
+# ---------------------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------------------
 .DS_Store
 *.pem
+Thumbs.db
 
-# debug
+# ---------------------------------------------------------------------------
+# Debug logs
+# ---------------------------------------------------------------------------
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# ---------------------------------------------------------------------------
+# Environment files
+# ---------------------------------------------------------------------------
+# Ignore every .env file so real secrets can never be committed...
 .env*
+# ...but DO commit the example file, so anyone cloning the repo can see which
+# variables the project needs.
+!.env.example
 
-# vercel
+# ---------------------------------------------------------------------------
+# Vercel
+# ---------------------------------------------------------------------------
 .vercel
 
-# typescript
+# ---------------------------------------------------------------------------
+# TypeScript (kept even though this project is JavaScript - harmless)
+# ---------------------------------------------------------------------------
 *.tsbuildinfo
-next-env.d.ts
+
+# Dev artifacts - not part of the app
+CODE_DUMP.txt
+HEXANOVA_HANDOFF.md
+PROJECT_SNAPSHOT.md
